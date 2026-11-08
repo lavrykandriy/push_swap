@@ -6,7 +6,7 @@
 /*   By: alavryk <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 23:53:03 by alavryk           #+#    #+#             */
-/*   Updated: 2026/11/08 01:21:34 by alavryk          ###   ########.fr       */
+/*   Updated: 2026/11/08 02:11:27 by alavryk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_stack
 	size_t	capacity;
 }	t_stack;
 // --stack.c ---
-int	*create_stack(int	*arr, size_t	size);
+t_stack	*create_stack(int *arr, size_t size, size_t capacity);
 
 // --- utils.c ---
 void		*ft_calloc(size_t count, size_t size);

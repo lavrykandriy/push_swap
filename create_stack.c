@@ -6,13 +6,13 @@
 /*   By: alavryk <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 23:11:09 by alavryk           #+#    #+#             */
-/*   Updated: 2026/11/08 01:27:47 by alavryk          ###   ########.fr       */
+/*   Updated: 2026/11/08 02:09:52 by alavryk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*value_to_index(int *arr, int *srt, size_t size)
+static int	*value_to_index(int *arr, int *srt, size_t size)
 {
 	size_t	i;
 	size_t	j;
@@ -24,7 +24,7 @@ int	*value_to_index(int *arr, int *srt, size_t size)
 	i = 0;
 	while (i < size)
 	{
-		j = i;
+		j = 0;
 		while (j < size)
 		{
 			if (arr[i] == srt[j])
@@ -39,7 +39,7 @@ int	*value_to_index(int *arr, int *srt, size_t size)
 	return (new);
 }
 
-int	*sorted_arr(int	*arr, size_t	size)
+static int	*sorted_arr(int	*arr, size_t	size)
 {
 	int	i;
 	int	j;
@@ -70,18 +70,23 @@ int	*sorted_arr(int	*arr, size_t	size)
 
 t_stack	*create_stack(int *arr, size_t size, size_t capacity)
 {
-	size_t	i;
-	size_t	j;
 	int		*srt;
 	int		*new_vl_idx;
 	t_stack	*stack;
 
+	stack = malloc(sizeof(t_stack));
+	if (!stack)
+		return (free(arr), NULL);
 	if (arr && size)
 	{
 		srt = sorted_arr(arr, size);
+		if (!srt)
+			return (free(arr), NULL);
 		new_vl_idx = value_to_index(arr, srt, size);
 		free(arr);
 		free(srt);
+		if (!new_vl_idx)
+			return (free(stack), NULL);
 		stack->arr = new_vl_idx;
 	}
 	else
