@@ -2,7 +2,8 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_parser.c ft_parser_utils.c ft_split.c utils.c m.c create_stack.c
+SRCS = ft_parser.c ft_parser_utils.c ft_split.c utils.c m.c create_stack.c\
+       op_print.c op_puw.c op_rotate.c alg_simple.c ft_memmove.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
