@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 		printf("a.arr[%zu] = %d\n", i, a->arr[i]);
 		i++;
 	}
-	alg_simple(a, b);
+	alg_alenya(a, b);
 	free(a->arr);
 	free(a);
 	free(b->arr);

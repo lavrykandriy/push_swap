@@ -6,7 +6,7 @@
 /*   By: alavryk <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 23:53:03 by alavryk           #+#    #+#             */
-/*   Updated: 2026/11/08 07:13:07 by alavryk          ###   ########.fr       */
+/*   Updated: 2026/11/13 02:18:08 by alavryk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,13 @@ void	pb(t_stack *a, t_stack *b);
 void	ra(t_stack *a);
 void	rb(t_stack *a);
 
+// --- op_reverse.c ---
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+
 // --- alg_simple.c ---
 void	alg_simple(t_stack *a, t_stack *b);
+void	alg_alenya(t_stack *a, t_stack *b);
 
 // --- ft_memmove.c ---
 void	*ft_memmove(void *dest, const void *src, size_t n);
